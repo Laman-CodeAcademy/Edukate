@@ -6,9 +6,11 @@ using Edukate.ViewModels.InstructorViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Edukate.Areas.Admin.Controllers
-{
-    public class CourseController(AppDbContext _context, IWebHostEnvironment _env) : Controller
+namespace Edukate.Areas.Admin.Controllers;
+[Area("Admin")]
+
+
+public class CourseController(AppDbContext _context, IWebHostEnvironment _env) : Controller
     {
         private readonly string folderPath = Path.Combine(_env.WebRootPath,"assets", "images");
         private async Task SendInstructorsWithViewBag()
@@ -171,4 +173,3 @@ namespace Edukate.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
     }
-}

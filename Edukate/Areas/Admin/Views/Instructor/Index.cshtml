@@ -1,0 +1,30 @@
+﻿@using Edukate.ViewModels.InstructorViewModel
+@model List<InstructorGetVM>
+<div>
+<table class="table">
+    <a asp-action="Create" class="btn btn-primary">Create</a>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">instructor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var instructor in Model)
+        {
+        <tr>
+            <th scope="row">1</th>
+
+                    <td>@instructor.Id</td>
+                    <td>@instructor.Name</td>
+            <td>
+                        <a asp-action="Update" asp-route-id="@instructor.Id" asp-area="Admin" class="btn btn-primary">Update</a>
+                        <a asp-action="Delete" asp-route-id="@instructor.Id" asp-area="Admin" class="btn btn-primary">Delete</a>
+
+            </td>
+        </tr>
+        }
+       
+    </tbody>
+</table>
+</div>

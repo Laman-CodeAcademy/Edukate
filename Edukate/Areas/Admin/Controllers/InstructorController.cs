@@ -4,8 +4,9 @@ using Edukate.ViewModels.InstructorViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Edukate.Areas.Admin.Controllers
-{
+namespace Edukate.Areas.Admin.Controllers;
+[Area("Admin")]
+
     public class InstructorController(AppDbContext _context) : Controller
     {
         public async Task<IActionResult> Index()
@@ -100,4 +101,3 @@ namespace Edukate.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
     }
-}
