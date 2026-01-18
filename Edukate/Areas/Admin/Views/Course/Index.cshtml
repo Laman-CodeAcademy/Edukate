@@ -1,0 +1,35 @@
+﻿@using Edukate.ViewModels.CourseViewModel
+@model List<CourseGetVM>
+<div>
+<table class="table">
+    <a asp-action="Create" class="btn btn-primary">Create</a>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Course</th>
+            <th scope="col">Rating</th>
+            <th scope="col">INstructor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var course in Model)
+        {
+        <tr>
+            <th scope="row">1</th>
+
+                    <td>@course.Id</td>
+                    <td>@course.Name</td>
+                    <td>@course.Rating</td>
+                    <td>@course.InstructorName</td>
+            
+            <td>
+                        <a asp-action="Update" asp-route-id="@course.Id" asp-area="Admin" class="btn btn-primary">Update</a>
+                        <a asp-action="Delete" asp-route-id="@course.Id" asp-area="Admin" class="btn btn-primary">Delete</a>
+
+            </td>
+        </tr>
+        }
+       
+    </tbody>
+</table>
+</div>
